@@ -1,0 +1,22 @@
+{
+  "name": "hackathome",
+  "version": "1.0.0",
+  "description": "Under Development - HackAtHome Project Submission",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhruv-tech/HackAtHome.git"
+  },
+  "author": "Dhruv, Anshul, Hung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhruv-tech/HackAtHome/issues"
+  },
+  "homepage": "https://github.com/dhruv-tech/HackAtHome#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
