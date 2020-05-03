@@ -33,14 +33,13 @@ app.get('/', (req, res) => {
     res.render('login');
 });
 
-app.get('/req', (req, res) => {
-    res.render('request');
+app.get('/c/:cid/essentials', (req, res) => {
+    res.render('essentials');
 });
 
 app.post('/api/login', async(req, res) => {
     try{
-        console.log(req.body);
-        await auth.session(req.body.user, req.body.password);
+        let session = await auth.session(req.body.user, req.body.password);
         res.send({msg: false, target: "/go"});
     } catch (e) {
         console.log(e);

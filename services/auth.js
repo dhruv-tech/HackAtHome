@@ -23,13 +23,13 @@ auth.check = (token, c) => {
 auth.session = (user, pass) => {
     return new Promise((resolve, reject) => {
         Models.Token.findOne({user: user}).then((res) => {
-            console.log(res);
             if (res == null) {
                 reject({reg: false, pass: false});
             } else {
                 bcrypt.compare(pass, res.password, function(err, result) {
                     if(result == true) {
-                        resolve();
+                        Models.Token
+                        resolve(token);
                     } else {
                         reject({reg: true, pass: false});
                     }

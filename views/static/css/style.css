@@ -19,14 +19,25 @@
 body {
     background: #f2f2f2;
     overflow-x: hidden;
+    font-family: 'varela round';
+    border-top: 7.5px solid blue;
+    border-image-source: linear-gradient(to right, #3366FF, #0099FF) ;
+    border-image-slice: 1;
 }
-#logo-inner{
+header #logo{
     width: 150px;
     position: relative;
+    padding-top: 5px;
 }
 .whitebg{
     background: white;
 }
 .top-pad {
     padding-top: 15px;
+}
+header {
+    padding-bottom: 5px;
+}
+.no-pad{
+    padding: 0;
 }
