@@ -33,6 +33,10 @@ app.get('/', (req, res) => {
     res.render('login');
 });
 
+app.get('/req', (req, res) => {
+    res.render('request');
+});
+
 app.post('/api/login', async(req, res) => {
     try{
         console.log(req.body);
