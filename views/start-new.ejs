@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Create - NEKO Neighborhood Dashboard</title>
+        <%- include('partials/top'); %>
+        
+        <div class = "row d-flex justify-content-center">
+            <div class="col-md-12 col-lg-11 no-pad grey-text">
+                <h2><b>User Registeration</b></h2>
+                <h5>Create a new Community </h5>
+            </div>
+        </div>
+
+        <div class = "row d-flex justify-content-center">
+            <div class="col-md-4 col-lg-3 grey-text">
+                <div class="card" id="login-box">
+                    <div class="card-body text-center">
+    
+                      <form>
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="name" placeholder="Your Name">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="hno" placeholder="Your House/Flat no.">
+                          </div>
+    
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="cname" placeholder="Your Community's Name">
+                        </div>
+
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="cadd" placeholder="Your Community's Address">
+                        </div>
+    
+                        <button type="button" onclick="create()" class="btn btn-primary">Create</button>
+    
+                      </form>
+    
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <%- include('partials/bottom'); %>
+</html>

@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Dash - NEKO Neighborhood Dashboard</title>
+        <%- include('partials/top'); %>
+        
+        <div class = "row d-flex justify-content-center">
+            <div class="col-md-12 col-lg-11 no-pad grey-text">
+                <h2><b><%= cname %></b></h2>
+                <h5>ID: <%= cid %></h5>
+            </div>
+        </div>
+
+        <div class = "row d-flex justify-content-center">
+            <div class="col-md-6 col-lg-3 grey-text justify-content-center">
+                <a href="/c/<%=cid%>/essentials"> <img src="/static/img/req-ess.png" class="dash-select"/> </a>
+            </div>
+
+            <div class="col-md-6 col-lg-3 grey-text justify-content-center">
+                <a href="/c/<%=cid%>/getter"> <img src="/static/img/get-ess.png" class="dash-select"/> </a>
+            </div>
+
+            <div class="col-md-6 col-lg-3 grey-text justify-content-center">
+                <a href="/c/start/new"> <img src="/static/img/sos.png" class="dash-select"/> </a>
+            </div>
+        </div>
+
+        <%- include('partials/bottom'); %>
+</html>

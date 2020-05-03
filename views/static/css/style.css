@@ -17,7 +17,7 @@
     width: 500px;
 }
 body {
-    background: #f2f2f2;
+    background: #EDEFF0;
     overflow-x: hidden;
     font-family: 'varela round';
     border-top: 7.5px solid blue;
@@ -41,3 +41,52 @@ header {
 .no-pad{
     padding: 0;
 }
+.grey-text {
+    color: #6A8299;
+}
+.start-select{
+    width: 350px;
+
+    padding-top: 20px;;
+}
+.card-help{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+
+}
+
+.dash-select{
+    width: 350px;
+
+    padding-top: 20px;;
+}
+
+@media (max-width: 992px) {
+
+    .no-pad {
+        padding-left: 15px;
+    }
+
+    .dash-select{
+        width: 250px;
+    
+        padding-top: 20px;;
+    }
+ }
+
+ @media (max-width: 1024px) {
+    .dash-select{
+        width: 250px;
+    
+        padding-top: 20px;;
+    }
+ }
+
+ @media (max-width: 1400px) {
+    .dash-select{
+        width: 270px;
+    
+        padding-top: 20px;;
+    }
+ }

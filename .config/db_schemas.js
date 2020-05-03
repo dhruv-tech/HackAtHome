@@ -26,6 +26,9 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: [true, "Password Needed"]
+    },
+    pushto: {
+        type: String
     }
 });
 
@@ -33,18 +36,6 @@ const CommunitySchema = new Schema({
     name: {
         type: String,
         required: [true, "Name Needed"]
-    },
-    admin: {
-        type: String,
-        required: [true, "Admin Needed"]
-    },
-    contact: {
-        type: String,
-        required: [true, "Contacts Needed"]
-    },
-    country: {
-        type: String,
-        required: [true, "Country Needed"]
     },
     address: {
         type: String,
@@ -57,11 +48,20 @@ const RequesterSchema = new Schema({
         type: String,
         required: [true, "user Needed"]
     },
-    comments: {
+    category: {
         type: String
     },
-    items: {
-        type: Array
+    phone: {
+        type: String
+    },
+    description: {
+        type: String
+    },
+    name: {
+        type:String
+    },
+    done: {
+        type: Boolean
     }
 });
 

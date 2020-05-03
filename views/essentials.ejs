@@ -1,49 +1,37 @@
 <!DOCTYPE>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Login - NEKO Neighborhood Dashboard</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="/static/css/style.css">
-    </head>
-    <body>
-        <header class = "row d-flex justify-content-center">
-          <div class="col-md-12 col-lg-11 no-pad">
-            <img src = "/static/img/neko_logo.png" id = "logo">
-          </div>
-              
-        </header>
+        <title>Requests - NEKO Neighborhood Dashboard</title>
+        <%- include('partials/top'); %>
 
         <div class = "row d-flex justify-content-center">
-          <div class="col-md-12 col-lg-11 whitebg">
-          <form>
-            <div class="form-group top-pad">
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Title" aria-describedby="emailHelp">
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" id="exampleFormControlTextarea1" placeholder = "Help/Items Needed/etc." rows="3"></textarea>
-              <small id="emailHelp" class="form-text text-muted">P.S. Don't forget to thank your neighbour!</small>
-            </div>
-        
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>    
-          </div>   
-        </div>
+          <div class="col-md-12 col-lg-11 no-pad grey-text">
+              <h2><b>Request for goods</b></h2>
+              <h5>#StayHome #StaySafe</h5>
+          </div>
+      </div>
 
         <div class = "row d-flex justify-content-center top-pad">
           <div class="col-md-12 col-lg-11 whitebg">
-            <h3>Past Requests</h3>
-            <div class="card" id="login-box">
-              <div class="card-header"> <b>Title</b> </div>
-              <div class="card-body text-center">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-              </div>
+          <form>
+            <div class="form-group top-pad">
+              <select class="form-control" id="cate">
+                <option value="" disabled="" selected>I need...</option>
+                <option>Grocery/Household Items</option>
+                <option>Medicines</option>
+              </select>
             </div>
-
-          </div>
-
+            <div class="form-group">
+              <input type="text" class="form-control" id="phone" placeholder="Phone Number"/>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" id="des" placeholder = "Briefly describle/list what you need..." rows="3"></textarea>
+              <small id="emailHelp" class="form-text text-muted">P.S. Don't forget to thank your neighbour!</small>
+            </div>
+        
+            <button type="button" onclick="req()" class="btn btn-primary">Submit</button>
+          </form>    
+          </div>   
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>

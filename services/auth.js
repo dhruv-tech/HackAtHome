@@ -7,9 +7,8 @@ const auth = {};
 
 auth.check = (token, c) => {
     return new Promise((resolve, reject) => {
-        Models.Token.find({_id: token, community: c}).then((res) => {
-
-            if (res != {}) {
+        Models.Token.findOne({_id: token, community: c}).then((res) => {
+            if (res != null) {
                 resolve();
             } else {
                 reject();
@@ -20,19 +19,69 @@ auth.check = (token, c) => {
     
 }
 
+auth.cname = (cid) => {
+    return new Promise(resolve => {
+        Models.Community.findOne({_id: cid}).then(async(res) => {
+            resolve(res.name);
+        });
+    })
+    
+};
+
 auth.session = (user, pass) => {
-    return new Promise((resolve, reject) => {
-        Models.Token.findOne({user: user}).then((res) => {
+    return new Promise(async(resolve, reject) => {
+        Models.User.findOne({email: user}).then(async(res) => {
+            console.log({email: user});
+            console.log(res);
             if (res == null) {
-                reject({reg: false, pass: false});
+                let uid = await auth.registerUser('idk', user, 'start', 'idk', false, pass);
+                Models.Token.create({user: uid, community: 'start'}).then((token) =>{
+                    resolve({sid: token._id, cid: token.community});
+                });
             } else {
+                console.log(res);
                 bcrypt.compare(pass, res.password, function(err, result) {
                     if(result == true) {
-                        Models.Token
-                        resolve(token);
+                        Models.Token.create({user: res._id, community: res.community}).then((token) =>{
+                            resolve({sid: token._id, cid: token.community});
+                        });
                     } else {
                         reject({reg: true, pass: false});
                     }
+                });
+            }
+
+        });
+    });
+}
+
+auth.join = (token, cid, hno, nme) => {
+    return new Promise(async(resolve, reject) => {
+        Models.Community.findOne({_id: cid}).then(async(res) => {
+            if (res == null) {
+                reject();
+            } else {
+                Models.Token.findOneAndUpdate({_id: token}, {community: cid}).then((token) =>{
+                    Models.User.findOneAndUpdate({_id: token.user}, {community: cid, houseNo: hno, name: nme}).then((user) =>{
+                        resolve({sid: token._id, cid: token.community});
+                    });
+                });
+            }
+
+        });
+    });
+}
+
+auth.new = (token, cname, cadd, hno, nme) => {
+    return new Promise(async(resolve, reject) => {
+        Models.Community.create({name: cname, address: cadd}).then(async(res) => {
+            if (res == null) {
+                reject();
+            } else {
+                Models.Token.findOneAndUpdate({_id: token}, {community: res._id}).then((token) =>{
+                    Models.User.findOneAndUpdate({_id: token.user}, {community: res._id, houseNo: hno, name: nme, isAdmin: true}).then((user) =>{
+                        resolve({sid: token._id, cid: res._id});
+                    });
                 });
             }
 
@@ -56,7 +105,7 @@ auth.registerUser = (u_name, u_email, u_community, u_houseno, u_isAdmin, u_pass)
                         password: hash
                     }
                 ).then(data => {
-                    resolve();
+                    resolve(data._id);
                 }).catch(err => {
                     reject();
                 })
