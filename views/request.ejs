@@ -8,8 +8,39 @@
         <link rel="stylesheet" href="/static/css/style.css">
     </head>
     <body>
-        <div class = "row d-flex justify-content-left">
-          <img src = "/static/img/neko_logo.png">          
+        <div class = "row d-flex justify-content-center">
+          <img src = "/static/img/neko_logo.png" id = "logo-inner">          
+        </div>
+
+        <div class = "row d-flex justify-content-center">
+          <div class="col-md-12 col-lg-11 whitebg">
+          <form>
+            <div class="form-group top-pad">
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Title" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" id="exampleFormControlTextarea1" placeholder = "Help/Items Needed/etc." rows="3"></textarea>
+              <small id="emailHelp" class="form-text text-muted">P.S. Don't forget to thank your neighbour!</small>
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>    
+          </div>   
+        </div>
+
+        <div class = "row d-flex justify-content-center top-pad">
+          <div class="col-md-12 col-lg-11 whitebg">
+            <h3>Past Requests</h3>
+            <div class="card" id="login-box">
+              <div class="card-header"> <b>Title</b> </div>
+              <div class="card-body text-center">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+              </div>
+            </div>
+
+          </div>
+
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>

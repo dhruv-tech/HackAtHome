@@ -11,7 +11,22 @@
     box-shadow: 2px 10px 31px -6px rgba(166,166,166,1);
     border: none !important;
 }
+#info-box{
+    box-shadow: 2px 10px 31px -6px rgba(166,166,166,1);
+    border: none !important;
+    width: 500px;
+}
 body {
     background: #f2f2f2;
     overflow-x: hidden;
+}
+#logo-inner{
+    width: 150px;
+    position: relative;
+}
+.whitebg{
+    background: white;
+}
+.top-pad {
+    padding-top: 15px;
 }
